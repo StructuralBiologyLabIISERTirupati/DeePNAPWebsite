@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>FASTA Predictions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<style>
+body {
+  background-image: url('https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/bg_img.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-border-bottom w3-xlarge">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to Use</a>
+    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Input Page</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-padding-large">How to Use</a>
+    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-padding-large">Input Page</a>
+  </div>
+</div>
+
+<!--End Navbar-->
+
+
+<!----Heading--->
+<div class="w3-center">
+  <header class="w3-container w3-teal">
+  <h2>Random Text ig</h2>
+</header>
+
+<header class="w3-container w3-teal">
+  <h1>DeePNAP</h1>
+</header>
+</div>
+
+
+
+
+<div class = 'w3-content'>
+  <div class = 'w3-container w3-light-gray w3-padding-64'>
+  <div class = 'w3-half'>
+    <p>Enter your Text in the FASTA format.</p>
+    <p>The web portal can parse through at most 20 Sequences</p>
+    <p>Make sure the number of Proteins and Nucleic Acid Sequences are equal.</p>
+    <p>The first protein is mapped to the First Nucleic Acid sequence. The Second is mapped to the second, etc etc.</p>
+    <p>Once you press Generate Output, you will be able to download the output as a CSV file. </p>
+  </div>
+  <div class = "w3-half">
+      <form action="{{ url_for('fasta')}}" method="post" class = "w3-center">
+
+        <textarea rows = "5" cols = "50" name = "Protein Sequence fasta" placeholder="Enter your Protein Sequence here." ></textarea>   <br>
+        <textarea rows = "5" cols = "50" name = "Nucleic Acid Sequence fasta" placeholder="Enter your Nucleic Acid Sequence here."></textarea> <br>
+            <br>
+          <button type="submit" class="w3-btn w3-teal">
+              Generate Output
+          </button>
+      </form>
+  </div>
+
+</div>
+</div>
+
+<div class = "w3-content">
+  <div class = 'w3-container w3-padding-64 w3-light-gray w3-center'>
+    <p> {{ generate_output }} </p>
+    <br>
+    <a href = "{{ url_for('download_fasta') }}"> <p> <u> <i> {{ download_link }} </i> </u> </p> </a>
+  </div>
+</div>
+
+
+<!-- Site footer -->
+
+<footer>
+
+<div class = "w3-container">
+    <div class="w3-row-padding w3-padding-16 w3-container w3-cyan"  >
+        <div class = 'w3-half'>
+            <div class = 'w3-content'>
+              <div>
+                <h4 style = 'text-align: center; font-weight: bold'>Citation</h4>
+                <h5 class="text-center">Uddeshya Pandey, Sasi Mitra Behara, Debasish Koner and Hussain Bhukya "DeePNAP: A deep learning method to predict protein-nucleic acids binding affinity from sequence"</h5>
+              </div>
+            </div>
+        </div>
+        <div class = 'w3-half'>
+            <div class = 'w3-content'>
+            <h4 style = 'text-align: center; font-weight: bold'>Contact</h4>
+            <h5>Indian Institute of Science Education and Research Tirupati, C/o Sree Rama Engineering College (Transit Campus), Rami Reddy Nagar, Karakambadi Road, Mangalam (P.O.) Tirupati -517507.
+              Andhra Pradesh, INDIA</h5>
+                <h5><strong>Email:</strong> hussainbhukya@labs.iisertirupati.ac.in</h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+</script>
+
+</body>

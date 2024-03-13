@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DeePNAP Input Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+
+
+
+<style>
+body {
+  background-image: url('https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/bg_img.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+
+</head>
+
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-border-bottom w3-xlarge">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to Use</a>
+    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Input Page</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-padding-large">How to Use</a>
+    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-padding-large">Input Page</a>
+  </div>
+</div>
+
+<!--End Navbar-->
+
+<div class="w3-center">
+  <header class="w3-container w3-teal">
+  <h2>Random Text ig</h2>
+</header>
+
+<header class="w3-container w3-teal">
+  <h1>DeePNAP</h1>
+</header>
+</div>
+
+<!-- First Grid -->
+<div class="w3-content">
+  <div class="w3-row-padding w3-white w3-padding-64 w3-container">
+
+<div class="w3-half">
+      <h5 class="w3-padding-32">Enter your Protein Sequence, Nucleic Acid Sequence, and any Mutations you wish to analyze.</h5>
+
+      <p class="w3-text-grey">Make sure that your entries are valid. <br>
+        The Protein sequence must only have the amino acids ACDEFGHIKLMNPQRSTVWY.
+        <br>
+        The Nucleic Acid sequence must contain only ATGCU. <br>
+        The Mutations must follow the correct format.
+          <br>
+          Hit the find output button. The results will be shown below.
+      </p>
+        <div class = 'w3-center'>
+          <div class = 'w3-half'>
+            <a href = "{{url_for('fasta_input')}}">
+              <button type = "submit"  class="w3-btn w3-theme">
+                FASTA Input
+              </button>
+            </a>
+          </div>
+          <div class = 'w3-half'>
+            <a href = "{{url_for('load_example')}}">
+              <button type = "submit"  class="w3-btn w3-theme">
+                Load Example
+              </button>
+            </a>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="w3-half w3-center">
+                <form action="{{ url_for('predict')}}"method="post" class = "w3-center">
+
+        <textarea rows = "5" cols = "50" name = "Protein Sequence" placeholder="Enter your Protein Sequence here." >MVQIPQNPLILVDGSSYLYRAYHAFPPLTNSAGEPTGAMYGVLNMLRSLIMQYKPTHAAVVFDAKGKTFRDELFEHYKSHRPPMPDDLRAQIEPLHAMVKAMGLPLLAVSGVEADDVIGTLAREAEKAGRPVLISTGDKDMAQLVTPNITLINTMTNTILGPEEVVNKYGVPPELIIDFLALMGDSSDNIPGVPGVGEKTAQALLQGLGGLDTLYAEPEKIAGLSFRGAKTMAAKLEQNKEVAYLSYQLATIKTDVELELTCEQLEVQQPAAEELLGLFKKYEFKRWTADVEAGKWLQAKGAKPAAKPQETSVADEAPEVTATVISYDNYVTILDEETLKAWIAKLEKAPVFAFDTETDSLDNISANLVGLSFAIEPGVAAYIPVAHDYLDAPDQISRERALELLKPLLEDEKALKVGQNLKYDRGILANYGIELRGIAFDTMLESYILNSVAGRHDMDSLAERWLKHKTITFEEIAGKGKNQLTFN</textarea>   <br>
+        <textarea rows = "5" cols = "50" name = "Nucleic Acid Sequence" placeholder="Enter your Nucleic Acid Sequence here."  >GCGTACGCGATCGCGTACGC</textarea> <br>
+        <textarea rows = "5" cols = "50" name = "Mutations" placeholder="Enter your Mutations as per the format. Leave empty if none." >A15AACAGT</textarea>
+            <br>
+          <button type="submit" class="w3-btn w3-theme">
+              Find output
+          </button>
+                        </form>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-content">
+    <div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+
+      <div class = "w3-center">
+        <div class = "w3-center">            <h5 class="w3-padding-32">{{ protein_check }} <br>
+          {{ nucleic_acid_check }}</h5>
+        <table class = "w3-table w3-striped w3-bordered">
+          <thead class = "w3-theme">
+            <tr>
+              <th></th>
+              <th><div class = "tooltip"> \( K_D \) <span class = "tooltiptext"> Dissociation Rate Constant </span> </div></th>
+              <th><div class = "tooltip"> \( K_A \) <span class = "tooltiptext"> Association Rate Constant </span> </div></th>
+              <th><div class = "tooltip"> \( \Delta G \) <span class = "tooltiptext"> Change in Binding Energy </span> </div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wild Type</td>
+              <td>{{ Kd_Value }}</td>
+              <td>{{ Ka_value }}</td>
+              <td>{{ G_value }}</td>
+            </tr>
+            <tr>
+              <td>Mutant Type</td>
+              <td>{{ mKd_Value }}</td>
+              <td>{{ mKa_value }}</td>
+              <td>{{ mG_value }}</td>
+            </tr>
+          </tbody>
+          </table>
+
+
+        <div class = "tooltip"> \( \Delta \Delta G \) <span class = "tooltiptext"> Mutant \( \Delta G \)- Wild \( \Delta G \) </span> </div>  = <b>{{ ddg }}</b>
+        <br><br>
+        <a class="w3-button w3-theme" href="{{url_for('csv_output')}}">Download Output as CSV</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-content">
+    <div class="w3-row-padding w3-white w3-padding-32 w3-container">
+      <div class = 'w3-center'>
+        <h3>Formulas used to Caluclate the Values </h3>
+      </div>
+      <div class = "w3-center">
+        $$K_A = \frac 1 {K_D}$$
+        $$\Delta G = -RT \ln (K_D)$$
+        $$ \Delta\Delta G = \Delta G_{mutant} - \Delta G _{wild}$$
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Site footer -->
+
+<footer>
+
+<div class = "w3-container">
+    <div class="w3-row-padding w3-padding-16 w3-container w3-cyan"  >
+        <div class = 'w3-half'>
+            <div class = 'w3-content'>
+              <div>
+                <h4 style = 'text-align: center; font-weight: bold'>Citation</h4>
+                <h5 class="text-center">Uddeshya Pandey, Sasi Mitra Behara, Debasish Koner and Hussain Bhukya "DeePNAP: A deep learning method to predict protein-nucleic acids binding affinity from sequence"</h5>
+              </div>
+            </div>
+        </div>
+        <div class = 'w3-half'>
+            <div class = 'w3-content'>
+            <h4 style = 'text-align: center; font-weight: bold'>Contact</h4>
+            <h5>Indian Institute of Science Education and Research Tirupati, C/o Sree Rama Engineering College (Transit Campus), Rami Reddy Nagar, Karakambadi Road, Mangalam (P.O.) Tirupati -517507.
+              Andhra Pradesh, INDIA</h5>
+                <h5><strong>Email:</strong> hussainbhukya@labs.iisertirupati.ac.in</h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</footer>
+
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
