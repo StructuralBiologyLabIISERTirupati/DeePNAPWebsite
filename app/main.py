@@ -140,26 +140,23 @@ def predict_wild(prot1, na1, makefile=True):
     prot_str[0, :, :] = prot_encoding(prot1)  # Encode the wild-type protein sequence
     dr_str[0, :, :] = dr_encoding(na1)  # Encode the nucleic acid sequence
 
-    chkfiles = ['chkpointf1348.hdf5', 'chkpointf2083.hdf5', 'chkpointf1973.hdf5', 'chkpointf1192.hdf5']
+    chkfiles=['checkpoint_files/17_chkpointf1996.hdf5','checkpoint_files/37_chkpointf1959.hdf5', 'checkpoint_files/4_chkpointf0966.hdf5','checkpoint_files/2_chkpointf2376.hdf5','checkpoint_files/38_chkpointf1374.hdf5']
     kdw1_predict = np.zeros((1, 1))
     #kdm1_predict = np.zeros((1, 1))
     ddg1_predict = np.zeros((1, 1))
 
+
     # Iterate over the checkpoint files
-    for i in range(4):
-        model.load_weights(pwd + chkfiles[i])  # Load the weights of the current checkpoint file
+    for i in range(5):
+        model.load_weights(chkfiles[i])
+        kdw_pred=model.predict({"pinp":prot_str, "drinp":dr_str, "pinp1":prot_str, "drinp1":dr_str}, verbose=0)[0]
+        ddg_pred=model.predict({"pinp":prot_str, "drinp":dr_str, "pinp1":prot_str, "drinp1":dr_str}, verbose=0)[2]
 
-        # Predict the values using the loaded model and input data
-        kdw_predict = model.predict({"pinp": prot_str, "drinp": dr_str, "pinp1": prot_str, "drinp1": dr_str})[0]
-        #kdm_predict=model.predict({"pinp":pwild_test, "drinp":nacid_test, "pinp1":pmut_test, "drinp1":nacid_test})[1]
-        #ddg_predict=model.predict({"pinp":pwild_test, "drinp":nacid_test, "pinp1":pmut_test, "drinp1":nacid_test})[2]
+        kdw_predict += kdw_pred
+        kdm_predict += kdm_pred
+        ddg_predict += ddg_pred
 
-        kdw1_predict += kdw_predict
-        #kdm1_predict += kdm_predict
-        #ddg1_predict += ddg_predict
-
-    kdw_predict = 10.0 ** (kdw1_predict / 4.0)  # Calculate the absolute value of kdw_predict
-    #kdm_predict= 10.0**(kdm1_predict/4.0) ###absolute value
+    kdw_predict = 10.0**(kdw_predict/5)  # Calculate the absolute value of kdw_predict
 
     c = 1.37295896724
     #ddg_predict=c*(kdw1_predict-kdm1_predict)/4.0   ###in kcal/mol
@@ -214,26 +211,28 @@ def predict_mutant(prot1, na1, mutations):
     mut_str[0, :, :] = prot_encoding(prot2)
 
     # Checkpoint files for the model
-    chkfiles = ['chkpointf1348.hdf5', 'chkpointf2083.hdf5', 'chkpointf1973.hdf5', 'chkpointf1192.hdf5']
+    chkfiles=['checkpoint_files/17_chkpointf1996.hdf5','checkpoint_files/37_chkpointf1959.hdf5', 'checkpoint_files/4_chkpointf0966.hdf5','checkpoint_files/2_chkpointf2376.hdf5','checkpoint_files/38_chkpointf1374.hdf5']
     kdw1_predict = np.zeros((1, 1))
     kdm1_predict = np.zeros((1, 1))
     ddg1_predict = np.zeros((1, 1))
 
     # Iterate over the checkpoint files
-    for i in range(4):
-        model.load_weights(pwd + chkfiles[i])
+    # Iterate over the checkpoint files
+    for i in range(5):
+        model.load_weights(chkfiles[i])
+        kdw_predict=model.predict({"pinp":prot_str, "drinp":dr_str, "pinp1":mut_str, "drinp1":dr_str}, verbose=0)[0]
+        kdm_predict=model.predict({"pinp":prot_str, "drinp":dr_str, "pinp1":mut_str, "drinp1":dr_str}, verbose=0)[1]
+        ddg_predict=model.predict({"pinp":prot_str, "drinp":dr_str, "pinp1":mut_str, "drinp1":dr_str}, verbose=0)[2]
 
-        # Make predictions for the wild-type and mutant proteins
-        kdw_predict = model.predict({"pinp": prot_str, "drinp": dr_str, "pinp1": prot_str, "drinp1": dr_str})[0]
-        kdm_predict = model.predict({"pinp": prot_str, "drinp": dr_str, "pinp1": mut_str, "drinp1": dr_str})[1]
-        ddg_predict=model.predict({"pinp":pwild_test, "drinp":nacid_test, "pinp1":pmut_test, "drinp1":nacid_test})[2]
         kdw1_predict += kdw_predict
         kdm1_predict += kdm_predict
         ddg1_predict += ddg_predict
 
+    kdw_predict = 10.0**(kdw_predict/5)  # Calculate the absolute value of kdw_predict
+
     # Calculate the predicted values
-    kdw_predict = 10.0 ** (kdw1_predict / 4.0)
-    kdm_predict = 10.0 ** (kdm1_predict / 4.0)
+    kdw_predict = 10.0 ** (kdw1_predict / 5.0)
+    kdm_predict = 10.0 ** (kdm1_predict / 5.0)
     c = 1.37295896724
     kd = kdw_predict
     ka = 1 / kd
@@ -542,21 +541,6 @@ def prot_encoding(protein_sequence):
 
 # Protein: MAVRHERVAVRQERAVRTRQAIVRAAASVFDEYGFEAATVAEILSRASVTKGAMYFHFASKEELARGVLAEQTLHVAVPESGSKAQELVDLTMLVAHGMLHDPILRAGTRLALDQGAVDFSDANPFGEWGDICAQLLAEAQERGEVLPHVNPKKTGDFIVGCFTGLQAVSRVTSDRQDLGHRISVMWNHVLPSIVPASMLTWIETGEERIGKVAAAAEAAEAAEASEAASDE
 # Nucleic Acid: GAGGCAAGCGAACCGCTCGGTTTGCTGAA
-lrelu = Lambda(lambda x: tf.keras.activations.relu(x, alpha=0.2))
-from itertools import combinations
-y=list(combinations('ABCDEF', 3))
-
-STRING='ABCDEF'
-pencoded=np.array([1,0,1,0,1,1])
-for i in y:
-   b6=np.zeros(6,dtype=int)
-   for j in i:
-     k=STRING.index(j)
-     b6[k] = 1
-   pencoded=np.vstack([pencoded,b6])
-
-p_encoded = np.delete(pencoded, 0, 0)
-#print(p_encoded)
 
 drencoded=np.array([[1, 1, 0, 0],
 [1, 0, 1, 0],
@@ -588,9 +572,6 @@ p_encoded=np.array([
  [0, 0, 0, 1, 1, 1, 0, 1, 0]]) #Y
 
 
-
-
-
 pwild_test=np.zeros((1,1000,9))
 pmut_test=np.zeros((1,1000,9))
 nacid_test=np.zeros((1,75,5))
@@ -608,6 +589,9 @@ pwild_test[0,:,:]=prot_encoding(ftr1)
 pmut_test[0,:,:]=prot_encoding(ftr2)
 
 nacid_test[0,:,:]=dr_encoding(ftr3)
+
+
+lrelu = lambda x: tf.keras.layers.LeakyReLU(alpha=0.1)(x)
 
 protein_input = keras.Input(shape=(1000, 9, 1), name="pinp")
 
@@ -784,27 +768,30 @@ model = keras.Model(
     inputs=[protein_input, dr_input, protein_input1, dr_input1],
     outputs=[pdnn_01, pdnn_11, pdnn_22])
 
+chkfiles=['checkpoint_files/17_chkpointf1996.hdf5','checkpoint_files/37_chkpointf1959.hdf5', 'checkpoint_files/4_chkpointf0966.hdf5','checkpoint_files/2_chkpointf2376.hdf5','checkpoint_files/38_chkpointf1374.hdf5']
 
-model.load_weights(pwd + 'chkpointf1973.hdf5')
-
+kdw_predict = 0
+kdm_predict = 0
+ddg_predict = 0
 
 a = pwild_test
 b = pmut_test
 c = nacid_test
 
-kdw_predict = model.predict({"pinp":a, "drinp":c,"pinp1":a, "drinp1":c})[0][0][0]
-kdm_predict = model.predict({"pinp":a, "drinp":c,"pinp1":b, "drinp1":c})[1][0][0]
-ddg_predict = model.predict({"pinp":a, "drinp":c,"pinp1":b, "drinp1":c})[2][0][0]
+for i in range(5):
+  model.load_weights(chkfiles[i])
+  kdw_pred=model.predict({"pinp":a, "drinp":c, "pinp1":a, "drinp1":c}, verbose=0)[0]
+  kdm_pred=model.predict({"pinp":a, "drinp":c, "pinp1":b, "drinp1":c}, verbose=0)[1]
+  ddg_pred=model.predict({"pinp":a, "drinp":c, "pinp1":b, "drinp1":c}, verbose=0)[2]
 
-kdw_predict= 10.0**(kdw_predict) ###absolute value
-kdm_predict= 10.0**(kdm_predict) ###absolute value
-c=1.37295896724
-ddg_predict=c*ddg_predict   ###in kcal/mol
+  kdw_predict += kdw_pred
+  kdm_predict += kdm_pred
+  ddg_predict += ddg_pred
 
+print("Kd(wild) =",10.0**(kdw_predict/5))
+print("Kd(mutant) =",10.0**(kdm_predict/5))
+print("ddG (kcal/mol) =",ddg_predict/5*1.37295896724)
 
-print('Wild Kd : ', kdw_predict, "\n",
-      'Mutant Kd :', kdm_predict, "\n",
-      'Free Energy difference : ', ddg_predict)
 
 
 

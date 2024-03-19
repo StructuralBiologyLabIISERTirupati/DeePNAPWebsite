@@ -6,13 +6,9 @@ DeePNAP is a software that provides a web portal for predicting the protein-nucl
 
 DeePNAP aims to accurately predict the binding affinity and free energy changes resulting from mutations in PNAIs using only the sequences as input. Unlike other similar tools that utilize both sequence and structure information, DeePNAP relies solely on sequence-based features. This approach yields high correlation coefficients between the predicted and experimental values, with low root mean squared errors for PNA complexes when predicting the log10(KD) values. These results demonstrate the generalizability of DeePNAP.
 
-![Model Architecture](https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/archi5.png)
-
 To validate the model's performance, its predictions were compared with experimentally measured binding affinities of BarA-/BfmR-DNA. The comparison showed excellent agreement, further confirming the accuracy of DeePNAP's predictions.
 
 In addition to the model itself, a web interface has been developed to host DeePNAP. This web portal is a powerful tool for rapidly predicting binding affinities for a wide range of PNAIs with high precision. It provides researchers with a convenient means of gaining insights into the implications of PNAIs in various biological systems.
-
-The paper describing the model can be found at https://pubs.acs.org/doi/10.1021/acs.jcim.3c01151
 
 ## Prerequisites
 
@@ -58,8 +54,13 @@ To install and run DeePNAP on your computer, follow the instructions below:
     ```bash
     pip install -r requirements.txt
     ```
+
+5. **Import the Checkpoint Files**: Once the dependencies are installed, import the checkpoint files into the correct location. The files can be downloaded from the following link: 
+https://drive.google.com/drive/folders/1BPPCl_izq96_MD60FXx60slgY8oPb-Qa?usp=sharing
+
+    Make sure the checkpoint files are in the folder checkpoint_files
     
-5. **Run the software**: Once the dependencies are installed, you can run DeePNAP by executing the `__init__.py` file. Run the following command:
+6. **Run the software**: Once the dependencies are installed and the checkpoint files are imported, you can run DeePNAP by executing the `__init__.py` file. Run the following command:
     
     ```bash
     python __init__.py
