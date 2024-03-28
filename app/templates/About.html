@@ -1,182 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<style>
-body {
-  background-image: url('https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/bg_img.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-image: url('https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/bg_img.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
 
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
+    table,
+    th,
+    td {
+      border: 1px solid rgba(55, 53, 47, 0.09);
+      border-collapse: collapse;
+    }
 
-table {
-	border-left: none;
-	border-right: none;
-}
+    table {
+      border-left: none;
+      border-right: none;
+    }
 
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
+    th,
+    td {
+      font-weight: normal;
+      padding: 0.25em 0.5em;
+      line-height: 1.5;
+      min-height: 1.5em;
+      text-align: left;
+    }
 
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-</style>
+
+    ol,
+    ul {
+      margin: 0;
+      margin-block-start: 0.6em;
+      margin-block-end: 0.6em;
+    }
+
+    li>ol:first-child,
+    li>ul:first-child {
+      margin-block-start: 0.6em;
+    }
+
+    ul>li {
+      list-style: disc;
+    }
+
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif
+    }
+
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px
+    }
+  </style>
+
 <body>
 
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-teal w3-border-bottom w3-xlarge">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
-    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to Use</a>
-    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Input Page</a>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-teal w3-border-bottom w3-xlarge">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+      <a href="{{url_for('how_to_use')}}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to Use</a>
+      <a href="{{url_for('input_page')}}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Input Page</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-padding-large">How to Use</a>
+      <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-padding-large">Input Page</a>
+    </div>
   </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-padding-large">How to Use</a>
-    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-padding-large">Input Page</a>
+  <!--End Navbar-->
+
+  <div class="w3-center">
+    <header class="w3-container w3-teal">
+      <h2>Random Text ig</h2>
+    </header>
+
+    <header class="w3-container w3-teal">
+      <h1>DeePNAP</h1>
+    </header>
   </div>
-</div>
 
-<!--End Navbar-->
-
-<div class="w3-center">
-  <header class="w3-container w3-teal">
-  <h2>Random Text ig</h2>
-</header>
-
-<header class="w3-container w3-teal">
-  <h1>DeePNAP</h1>
-</header>
-</div>
-
-<div class = "w3-container">
+  <div class="w3-container">
     <div class="w3-row-padding w3-white w3-padding-32 w3-container">
-        <div class = 'w3-half'>
-            <div class = 'w3-content'>
-                <h1 style = 'color:white' class = 'w3-hide-small'>Check Your Protein-Nucleic Acid Binding Affinity with DeePNAP</h1>
-                <h1>Check Your Protein-Nucleic Acid Binding Affinity with DeePNAP</h1>
-                <h2 style="border-width:3px; border-style:solid; border-color:#000000; padding: 1em;" >Inputs Required: Single Protein Sequence, and a Single Nucleic Acid Sequence</h2>
-                <h3>DeePNAP is a deep learning model with over 170,000 parameters that has been trained on 14,400 experimentally confirmed P-NA complex binding affinity data to estimate KD for the given P and NA sequence.</h3>
+      <div class='w3-half'>
+        <div class='w3-content'>
+          <h1 style='color:white' class='w3-hide-small'>Check Your Protein-Nucleic Acid Binding Affinity with DeePNAP
+          </h1>
+          <h1>Check Your Protein-Nucleic Acid Binding Affinity with DeePNAP</h1>
+          <h2 style="border-width:3px; border-style:solid; border-color:#000000; padding: 1em;">Inputs Required: Single
+            Protein Sequence, and a Single Nucleic Acid Sequence</h2>
+          <h3>DeePNAP is a deep learning model with over 170,000 parameters that has been trained on 14,400
+            experimentally confirmed P-NA complex binding affinity data to estimate KD for the given P and NA sequence.
+          </h3>
 
-            </div>
         </div>
-        <div class = 'w3-half'>
-            <div class = 'w3-content'>
-                <img src="https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/archi5.png" alt="Model Architecture" width="100%">
-            </div>
+      </div>
+      <div class='w3-half'>
+        <div class='w3-content'>
+          <img src="https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/archi5.png"
+            alt="Model Architecture" width="100%">
         </div>
+      </div>
 
     </div>
-</div>
+  </div>
 
 
 
 
 
 
-<!-- Site footer -->
+  <!-- Site footer -->
 
-<footer>
+  <footer>
 
-  <div class = "w3-container">
-    <div class="w3-row-padding w3-padding-16 w3-container w3-cyan"  >
-        <div class = 'w3-half'>
-            <div class = 'w3-content'>
-              <div>
-                <h4 style = 'text-align: center; font-weight: bold'>Citation</h4>
-                <h5 class="text-center">Uddeshya Pandey, Sasi M. Behara, Siddhant Sharma, Rachit S. Patil, Souparnika Nambiar, Debasish Koner*, and Hussain Bhukya* <br> "DeePNAP: A Deep Learning Method to Predict Protein–Nucleic Acid Binding Affinity from Their Sequences"</h5>
-                <p>https://pubs.acs.org/doi/10.1021/acs.jcim.3c01151</p>
-              </div>
+    <div class="w3-container">
+      <div class="w3-row-padding w3-padding-16 w3-container w3-cyan">
+        <div class='w3-half'>
+          <div class='w3-content'>
+            <div>
+              <h4 style='text-align: center; font-weight: bold'>Citation</h4>
+              <h5 class="text-center">Uddeshya Pandey, Sasi M. Behara, Siddhant Sharma, Rachit S. Patil, Souparnika
+                Nambiar, Debasish Koner*, and Hussain Bhukya* <br> "DeePNAP: A Deep Learning Method to Predict
+                Protein–Nucleic Acid Binding Affinity from Their Sequences"</h5>
+              <p>https://pubs.acs.org/doi/10.1021/acs.jcim.3c01151</p>
             </div>
+          </div>
         </div>
-        <div class = 'w3-half'>
-            <div class = 'w3-content'>
-            <h4 style = 'text-align: center; font-weight: bold'>Contact</h4>
+        <div class='w3-half'>
+          <div class='w3-content'>
+            <h4 style='text-align: center; font-weight: bold'>Contact</h4>
             <h5>Indian Institute of Science Education and Research Tirupati, Srinivasapuram, Yerpedu Mandal
               Tirupati Dist, Andhra Pradesh, India – 517619.</h5>
-                <h5><strong>Email:</strong> hussainbhukya@labs.iisertirupati.ac.in</h5>
-            </div>
+            <h5><strong>Email:</strong> hussainbhukya@labs.iisertirupati.ac.in</h5>
+          </div>
         </div>
 
+      </div>
     </div>
-</div>
 
-</footer>
+  </footer>
 
 
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
 
-// Tabs
-function openCity(evt, cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  var activebtn = document.getElementsByClassName("testbtn");
-  for (i = 0; i < x.length; i++) {
-    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " w3-dark-grey";
-}
-var mybtn = document.getElementsByClassName("testbtn")[0];
-mybtn.click();
-</script>
+    // Tabs
+    function openCity(evt, cityName) {
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      var activebtn = document.getElementsByClassName("testbtn");
+      for (i = 0; i < x.length; i++) {
+        activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " w3-dark-grey";
+    }
+    var mybtn = document.getElementsByClassName("testbtn")[0];
+    mybtn.click();
+  </script>
 
 </body>
 

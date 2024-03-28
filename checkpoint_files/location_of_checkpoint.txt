@@ -1,0 +1,1 @@
+The checkpoint files downloaded from the google drive go into the folder where this text file was present.

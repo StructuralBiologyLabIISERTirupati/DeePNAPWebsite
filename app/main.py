@@ -228,7 +228,7 @@ def predict_mutant(prot1, na1, mutations):
         kdm1_predict += kdm_predict
         ddg1_predict += ddg_predict
 
-    kdw_predict = 10.0**(kdw_predict/5)  # Calculate the absolute value of kdw_predict
+    kdw_predict = 10.0**(kdw1_predict/5)  # Calculate the absolute value of kdw_predict
 
     # Calculate the predicted values
     kdw_predict = 10.0 ** (kdw1_predict / 5.0)
@@ -238,12 +238,13 @@ def predict_mutant(prot1, na1, mutations):
     ka = 1 / kd
     G = c * (kdw1_predict / 4.0)
     kd, ka, G = kd[0][0], ka[0][0], G[0][0]
+
     mkd = kdm_predict
-    mka = 1 / kd
+    mka = 1 / mkd
     mG = c * (kdw1_predict / 4.0)
-    mkd, mG = mkd[0][0], mG[0][0]
+    mkd, mka, mG = mkd[0][0], mka[0][0], mG[0][0]
     #ddg = 1.37295896724 * ddg1_predict
-    ddg = c*(-kdw1_predict + kdm1_predict)/4.0   ###in kcal/mol
+    ddg = c*(-kdw1_predict + kdm1_predict)/5.0   ###in kcal/mol
 
     ddg = ddg[0][0]
 

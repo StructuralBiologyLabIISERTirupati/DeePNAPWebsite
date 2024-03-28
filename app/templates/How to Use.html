@@ -1,312 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>How to Use</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<style>
-body {
-  background-image: url('https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/bg_img.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+  <title>How to Use</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-image: url('https://raw.githubusercontent.com/StructuralBiologyLabIISERTirupati/DeePNAPWebsite/main/bg_img.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
 
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
+    table,
+    th,
+    td {
+      border: 1px solid rgba(55, 53, 47, 0.09);
+      border-collapse: collapse;
+    }
 
-table {
-	border-left: none;
-	border-right: none;
-}
+    table {
+      border-left: none;
+      border-right: none;
+    }
 
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
+    th,
+    td {
+      font-weight: normal;
+      padding: 0.25em 0.5em;
+      line-height: 1.5;
+      min-height: 1.5em;
+      text-align: left;
+    }
 
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-</style>
+
+    ol,
+    ul {
+      margin: 0;
+      margin-block-start: 0.6em;
+      margin-block-end: 0.6em;
+    }
+
+    li>ol:first-child,
+    li>ul:first-child {
+      margin-block-start: 0.6em;
+    }
+
+    ul>li {
+      list-style: disc;
+    }
+
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif
+    }
+
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px
+    }
+  </style>
+
 <body>
 
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-teal w3-border-bottom w3-xlarge">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
-    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to Use</a>
-    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Input Page</a>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-teal w3-border-bottom w3-xlarge">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+      <a href="{{url_for('how_to_use')}}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to Use</a>
+      <a href="{{url_for('input_page')}}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Input Page</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-padding-large">How to Use</a>
+      <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-padding-large">Input Page</a>
+    </div>
   </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="{{url_for('home')}}" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="{{url_for('how_to_use')}}" class="w3-bar-item w3-button w3-padding-large">How to Use</a>
-    <a href="{{url_for('input_page')}}" class="w3-bar-item w3-button w3-padding-large">Input Page</a>
+  <!--End Navbar-->
+
+  <div class="w3-center">
+    <header class="w3-container w3-teal">
+      <h2>Random Text ig</h2>
+    </header>
+
+    <header class="w3-container w3-teal">
+      <h1>How to use the DeePNAP Tool</h1>
+    </header>
   </div>
-</div>
 
-<!--End Navbar-->
-
-<div class="w3-center">
-  <header class="w3-container w3-teal">
-  <h2>Random Text ig</h2>
-</header>
-
-<header class="w3-container w3-teal">
-  <h1>How to use the DeePNAP Tool</h1>
-</header>
-</div>
-
-<div class = "w3-content">
+  <div class="w3-content">
     <div class="w3-row-padding w3-white w3-padding-32 w3-container">
 
-       <h4>There are three inputs that need to be given for the program:</h4>
-              <ol>
-                <li>
-                  <h4>Protein Input</h4>
-                </li>
-                <li>
-                  <h4>Nucleic Acid Input</h4>
-                </li>
-                <li>
-                  <h4>Mutations</h4>
-                </li>
-              </ol>
+      <h4>There are three inputs that need to be given for the program:</h4>
+      <ol>
+        <li>
+          <h4>Protein Input</h4>
+        </li>
+        <li>
+          <h4>Nucleic Acid Input</h4>
+        </li>
+        <li>
+          <h4>Mutations</h4>
+        </li>
+      </ol>
     </div>
-</div>
+  </div>
 
-<div class = "w3-content">
+  <div class="w3-content">
     <div class="w3-white w3-container w3-padding-32">
 
-        <div class="w3-border">
-            <div class="w3-bar w3-theme">
-              <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Protein Input')">Protein Input</button>
-              <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Nucleic Acid Input')">Nucleic Acid Input</button>
-              <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Mutation Input')">Mutation Input</button>
-            </div>
-
-            <div id="Protein Input" class="w3-container city w3-animate-opacity">
-                <h1>Protein Input</h1>
-                <p>The protein Input is a string depicting the Amino Acids. The string must be limited to a sequence of 1000 Amino Acids. As the model was not trained on sequences longer than 1000, the program will not be able to take any inputs longer than 1000 Amino Acids.</p>
-                <p>Each character in the string represents an Amino Acid.  The Amino acids recognized by the program are just ACDEFGHIKLMNPQRSTVWY, where each character represents it's FASTA code for an Amino Acid. The FASTA code for Amino Acids can be found in the table below.</p>
-
-                <table class = 'w3-table w3-striped w3-bordered'>
-                    <thead>
-                      <tr class = 'w3-theme'>
-                        <th>Code</th>
-                        <th>Amino Acid</th>
-                        <th>Code</th>
-                        <th>Amino Acid</th>
-                        <th>Code</th>
-                        <th>Amino Acid</th>
-                        <th>Code</th>
-                        <th>Amino Acid</th>
-                        <th>Code</th>
-                        <th>Amino Acid</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>A</td>
-                        <td>Alanine</td>
-                        <td>B</td>
-                        <td>Aspartic Acid (D) or Asparagine (N)</td>
-                        <td>C</td>
-                        <td>Cysteine</td>
-                        <td>D</td>
-                        <td>Aspartic Acid</td>
-                        <td>E</td>
-                        <td>Glutamic Acid</td>
-                      </tr>
-                      <tr>
-                        <td>F</td>
-                        <td>Phenylalanine</td>
-                        <td>G</td>
-                        <td>Glycine</td>
-                        <td>H</td>
-                        <td>Histidine</td>
-                        <td>I</td>
-                        <td>Isoleucine</td>
-                        <td>J</td>
-                        <td>Leucine (L) or Isoleucine (I)</td>
-                      </tr>
-                      <tr>
-                        <td>K</td>
-                        <td>Lysine</td>
-                        <td>L</td>
-                        <td>Leucine</td>
-                        <td>M</td>
-                        <td>Methionine / Start Codon</td>
-                        <td>N</td>
-                        <td>Asparagine</td>
-                        <td>O</td>
-                        <td>Pyrrolysine (Rare)</td>
-                      </tr>
-                      <tr>
-                        <td>P</td>
-                        <td>Proline</td>
-                        <td>Q</td>
-                        <td>Glutamine</td>
-                        <td>R</td>
-                        <td>Arginine</td>
-                        <td>S</td>
-                        <td>Serine</td>
-                        <td>T</td>
-                        <td>Theroine</td>
-                      </tr>
-                      <tr>
-                        <td>U</td>
-                        <td>Selenocysteine (Rare)</td>
-                        <td>V</td>
-                        <td>Valine</td>
-                        <td>W</td>
-                        <td>Tryptophan</td>
-                        <td>Y</td>
-                        <td>Tyrosine</td>
-                        <td>Z</td>
-                        <td>Glutamic Acid (E) or Glutamine (Q)</td>
-                      </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div id="Nucleic Acid Input" class="w3-container city w3-animate-opacity">
-                      <h2>Nucleic Acid Input</h2>
-                      <p>The Nucleic Acid is a string depecting either your DNA or RNA. The string must be limited to a sequence of 75 Bases. As the model was not trained on sequences longer than 75, the program will not be able to take any inputs longer than 75 bases.</p>
-                      <p>Each character in the string represents a Nucleotide. The Nucleotides recognized by the program are just ATGCU, where</p>
-                      <ul>
-                        <li>A is Adenine</li>
-                        <li>T is Thymine</li>
-                        <li>G is Guanine</li>
-                        <li>C is Cytosine</li>
-                        <li>U is Uracil</li>
-                      </ul>
-            </div>
-
-            <div id="Mutation Input" class="w3-container city w3-animate-opacity">
-                <h1>Mutations</h1>
-                    <p>With the mutations input, you can make changes to the protein sequence, and compare its Binding Free Energy with the original protein sequence. </p>
-                    <p>You can give the mutations with specific commands. For multiple mutations, you can give multiple commands, all separately commas.</p>
-                    <p>There are two kinds of mutations that can be done,</p>
-                    <ol type="1" class="numbered-list" start="1">
-                        <li>Deletions: Removes an Amino Acid</li>
-                        <li>Replacements</li>
-                    </ol>
-                    <h3>Deletions</h3>
-                    <p>In order to delete a protein, you tell <code>del</code> followed by the Amino acid and it’s position.</p>
-                    <p>For example, if I have an Amino Acid sequence <code>ATCHVWTUVPRQATCHTRRRRACDEF</code>  and wanted to delete C at the third position, the command would be <code>delG3</code></p>
-                    <p>Sequence deletions are also supported. In order to delete a sequence of proteins, you tell <code>del</code>, followed by the start position and it’s amino acid, and the last position and its amino acid separated by a hyphen.</p>
-                    <p>For example, if I wanted to delete the sequence of proteins from the T in the 2nd position, to the V in the 9th position, the command would be <code>delT2-V9</code></p>
-                    <h3>Replacement</h3>
-                    <p>In order to replace a protein, you tell the Amino acid, it’s position, and the new amino acid.For example, if I have an Amino Acid sequence <code>ATCHVWTUVPRQATCHTRRRRACDEF</code>  and wanted to Replace C at the third position with a T, the command would be <code>C3T</code></p>
-                    <p>You can also replace a single amino acid with a sequence of amino acids. It follows the same syntax, and in place of the new amino acid, you give the sequence of amino acids.</p>
-                    <p>For example, if I wanted to replace the V at the fifth position with the sequence TUV, the command would be <code>V5TUV</code></p>
-                    <h3>Giving multiple Mutation Commands at once</h3>
-                    <p>In order to give multiple mutation commands, you type them in the box seperated by commas.</p>
-                    <p>Suppose I wanted to Delete T at 17th position, while replacing V at 5th position with TUV, the combined command would be <code>delT17, V5TUV</code></p>
-            </div>
+      <div class="w3-border">
+        <div class="w3-bar w3-theme">
+          <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Protein Input')">Protein
+            Input</button>
+          <button class="w3-bar-item w3-button testbtn w3-padding-16"
+            onclick="openCity(event,'Nucleic Acid Input')">Nucleic Acid Input</button>
+          <button class="w3-bar-item w3-button testbtn w3-padding-16"
+            onclick="openCity(event,'Mutation Input')">Mutation Input</button>
         </div>
+
+        <div id="Protein Input" class="w3-container city w3-animate-opacity">
+          <h1>Protein Input</h1>
+          <p>The protein Input is a string depicting the Amino Acids. The string must be limited to a sequence of 1000
+            Amino Acids. As the model was not trained on sequences longer than 1000, the program will not be able to
+            take any inputs longer than 1000 Amino Acids.</p>
+          <p>Each character in the string represents an Amino Acid. The Amino acids recognized by the program are just
+            ACDEFGHIKLMNPQRSTVWY, where each character represents it's FASTA code for an Amino Acid. The FASTA code for
+            Amino Acids can be found in the table below.</p>
+
+          <table class='w3-table w3-striped w3-bordered'>
+            <thead>
+              <tr class='w3-theme'>
+                <th>Code</th>
+                <th>Amino Acid</th>
+                <th>Code</th>
+                <th>Amino Acid</th>
+                <th>Code</th>
+                <th>Amino Acid</th>
+                <th>Code</th>
+                <th>Amino Acid</th>
+                <th>Code</th>
+                <th>Amino Acid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>Alanine</td>
+                <td>B</td>
+                <td>Aspartic Acid (D) or Asparagine (N)</td>
+                <td>C</td>
+                <td>Cysteine</td>
+                <td>D</td>
+                <td>Aspartic Acid</td>
+                <td>E</td>
+                <td>Glutamic Acid</td>
+              </tr>
+              <tr>
+                <td>F</td>
+                <td>Phenylalanine</td>
+                <td>G</td>
+                <td>Glycine</td>
+                <td>H</td>
+                <td>Histidine</td>
+                <td>I</td>
+                <td>Isoleucine</td>
+                <td>J</td>
+                <td>Leucine (L) or Isoleucine (I)</td>
+              </tr>
+              <tr>
+                <td>K</td>
+                <td>Lysine</td>
+                <td>L</td>
+                <td>Leucine</td>
+                <td>M</td>
+                <td>Methionine / Start Codon</td>
+                <td>N</td>
+                <td>Asparagine</td>
+                <td>O</td>
+                <td>Pyrrolysine (Rare)</td>
+              </tr>
+              <tr>
+                <td>P</td>
+                <td>Proline</td>
+                <td>Q</td>
+                <td>Glutamine</td>
+                <td>R</td>
+                <td>Arginine</td>
+                <td>S</td>
+                <td>Serine</td>
+                <td>T</td>
+                <td>Theroine</td>
+              </tr>
+              <tr>
+                <td>U</td>
+                <td>Selenocysteine (Rare)</td>
+                <td>V</td>
+                <td>Valine</td>
+                <td>W</td>
+                <td>Tryptophan</td>
+                <td>Y</td>
+                <td>Tyrosine</td>
+                <td>Z</td>
+                <td>Glutamic Acid (E) or Glutamine (Q)</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div id="Nucleic Acid Input" class="w3-container city w3-animate-opacity">
+          <h2>Nucleic Acid Input</h2>
+          <p>The Nucleic Acid is a string depecting either your DNA or RNA. The string must be limited to a sequence of
+            75 Bases. As the model was not trained on sequences longer than 75, the program will not be able to take any
+            inputs longer than 75 bases.</p>
+          <p>Each character in the string represents a Nucleotide. The Nucleotides recognized by the program are just
+            ATGCU, where</p>
+          <ul>
+            <li>A is Adenine</li>
+            <li>T is Thymine</li>
+            <li>G is Guanine</li>
+            <li>C is Cytosine</li>
+            <li>U is Uracil</li>
+          </ul>
+        </div>
+
+        <div id="Mutation Input" class="w3-container city w3-animate-opacity">
+          <h1>Mutations</h1>
+          <p>With the mutations input, you can make changes to the protein sequence, and compare its Binding Free Energy
+            with the original protein sequence. </p>
+          <p>You can give the mutations with specific commands. For multiple mutations, you can give multiple commands,
+            all separately commas.</p>
+          <p>There are two kinds of mutations that can be done,</p>
+          <ol type="1" class="numbered-list" start="1">
+            <li>Deletions: Removes an Amino Acid</li>
+            <li>Replacements</li>
+          </ol>
+          <h3>Deletions</h3>
+          <p>In order to delete a protein, you tell <code>del</code> followed by the Amino acid and it’s position.</p>
+          <p>For example, if I have an Amino Acid sequence <code>ATCHVWTUVPRQATCHTRRRRACDEF</code> and wanted to delete
+            C at the third position, the command would be <code>delG3</code></p>
+          <p>Sequence deletions are also supported. In order to delete a sequence of proteins, you tell
+            <code>del</code>, followed by the start position and it’s amino acid, and the last position and its amino
+            acid separated by a hyphen.</p>
+          <p>For example, if I wanted to delete the sequence of proteins from the T in the 2nd position, to the V in the
+            9th position, the command would be <code>delT2-V9</code></p>
+          <h3>Replacement</h3>
+          <p>In order to replace a protein, you tell the Amino acid, it’s position, and the new amino acid.For example,
+            if I have an Amino Acid sequence <code>ATCHVWTUVPRQATCHTRRRRACDEF</code> and wanted to Replace C at the
+            third position with a T, the command would be <code>C3T</code></p>
+          <p>You can also replace a single amino acid with a sequence of amino acids. It follows the same syntax, and in
+            place of the new amino acid, you give the sequence of amino acids.</p>
+          <p>For example, if I wanted to replace the V at the fifth position with the sequence TUV, the command would be
+            <code>V5TUV</code></p>
+          <h3>Giving multiple Mutation Commands at once</h3>
+          <p>In order to give multiple mutation commands, you type them in the box seperated by commas.</p>
+          <p>Suppose I wanted to Delete T at 17th position, while replacing V at 5th position with TUV, the combined
+            command would be <code>delT17, V5TUV</code></p>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 
 
-<!-- Site footer -->
+  <!-- Site footer -->
 
-<footer>
+  <footer>
 
-  <div class = "w3-container">
-    <div class="w3-row-padding w3-padding-16 w3-container w3-cyan"  >
-        <div class = 'w3-half'>
-            <div class = 'w3-content'>
-              <div>
-                <h4 style = 'text-align: center; font-weight: bold'>Citation</h4>
-                <h5 class="text-center">Uddeshya Pandey, Sasi M. Behara, Siddhant Sharma, Rachit S. Patil, Souparnika Nambiar, Debasish Koner*, and Hussain Bhukya* <br> "DeePNAP: A Deep Learning Method to Predict Protein–Nucleic Acid Binding Affinity from Their Sequences"</h5>
-                <p>https://pubs.acs.org/doi/10.1021/acs.jcim.3c01151</p>
-              </div>
+    <div class="w3-container">
+      <div class="w3-row-padding w3-padding-16 w3-container w3-cyan">
+        <div class='w3-half'>
+          <div class='w3-content'>
+            <div>
+              <h4 style='text-align: center; font-weight: bold'>Citation</h4>
+              <h5 class="text-center">Uddeshya Pandey, Sasi M. Behara, Siddhant Sharma, Rachit S. Patil, Souparnika
+                Nambiar, Debasish Koner*, and Hussain Bhukya* <br> "DeePNAP: A Deep Learning Method to Predict
+                Protein–Nucleic Acid Binding Affinity from Their Sequences"</h5>
+              <p>https://pubs.acs.org/doi/10.1021/acs.jcim.3c01151</p>
             </div>
+          </div>
         </div>
-        <div class = 'w3-half'>
-            <div class = 'w3-content'>
-            <h4 style = 'text-align: center; font-weight: bold'>Contact</h4>
+        <div class='w3-half'>
+          <div class='w3-content'>
+            <h4 style='text-align: center; font-weight: bold'>Contact</h4>
             <h5>Indian Institute of Science Education and Research Tirupati, Srinivasapuram, Yerpedu Mandal
               Tirupati Dist, Andhra Pradesh, India – 517619.</h5>
-                <h5><strong>Email:</strong> hussainbhukya@labs.iisertirupati.ac.in</h5>
-            </div>
+            <h5><strong>Email:</strong> hussainbhukya@labs.iisertirupati.ac.in</h5>
+          </div>
         </div>
 
+      </div>
     </div>
-</div>
 
-</footer>
+  </footer>
 
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
 
-// Tabs
-function openCity(evt, cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  var activebtn = document.getElementsByClassName("testbtn");
-  for (i = 0; i < x.length; i++) {
-    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " w3-dark-grey";
-}
-var mybtn = document.getElementsByClassName("testbtn")[0];
-mybtn.click();
-</script>
+    // Tabs
+    function openCity(evt, cityName) {
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      var activebtn = document.getElementsByClassName("testbtn");
+      for (i = 0; i < x.length; i++) {
+        activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " w3-dark-grey";
+    }
+    var mybtn = document.getElementsByClassName("testbtn")[0];
+    mybtn.click();
+  </script>
 
 </body>
 
