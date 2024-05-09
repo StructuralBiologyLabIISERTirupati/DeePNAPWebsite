@@ -156,14 +156,15 @@ def predict_wild(prot1, na1, makefile=True):
         kdm_predict += kdm_pred
         ddg_predict += ddg_pred
 
-    kdw_predict = 10.0**(kdw_predict/5)  # Calculate the absolute value of kdw_predict
+    kdw1 = kdw_predict
+    kdw_predict = 10.0**(kdw1/5)  # Calculate the absolute value of kdw_predict
 
     c = 1.37295896724
     #ddg_predict=c*(kdw1_predict-kdm1_predict)/4.0   ###in kcal/mol
 
     kd = kdw_predict
     ka = 1 / kd
-    G = c * (kdw1_predict / 4.0)
+    G = c * (kdw1/5)
     kd, ka, G = kd[0][0], ka[0][0], G[0][0]
     #dgm = c*(kdm1_predict/4.0)
     #ddg = -c*(kdm1_predict/4)+c*(kdw1_predict/4.0)
