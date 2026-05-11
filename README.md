@@ -14,7 +14,7 @@ In addition to the model itself, a web interface has been developed to host DeeP
 
 Before running a local instance of the web portal, ensure that you have the following prerequisites installed:
 
-1. **Python**: Make sure you have the latest version of Python installed on your system. You can download it from the official Python website: [python.org](https://www.python.org/).
+1. **Python**: Make sure you have Python 3.9 installed on your system. Other versions of Python may be compatible but are not tested. We require a specific version of tensorflow (ref requirements.txt).
 2. **Required Libraries**: The necessary libraries for running DeePNAP are listed in the `requirements.txt` file. These dependencies need to be installed before running the software.
 
 ## Installation Instructions
