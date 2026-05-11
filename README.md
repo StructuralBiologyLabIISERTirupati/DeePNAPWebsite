@@ -55,7 +55,7 @@ To install and run DeePNAP on your computer, follow the instructions below:
     pip install -r requirements.txt
     ```
 
-5. **Import the Checkpoint Files**: Once the dependencies are installed, import the checkpoint files into the correct location. The files can be downloaded from the following link: 
+5. **Import the Checkpoint Files**: Once the dependencies are installed, import the checkpoint files into the correct location. The files can be downloaded from the following link, if not available when the repository is cloned: 
 https://drive.google.com/drive/folders/1BPPCl_izq96_MD60FXx60slgY8oPb-Qa?usp=sharing
 
     Make sure the checkpoint files are in the folder checkpoint_files
